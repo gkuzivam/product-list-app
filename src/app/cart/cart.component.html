@@ -1,0 +1,23 @@
+<div class="cart-container">
+    <h2> {{cartTitle}} ({{ cartCount()}})</h2>
+    <div class="empty-cart" *ngIf="cartCount() === 0 ; else loadedCart">
+        <img src="./assets/images/illustration-empty-cart.svg" alt="Empty Cart">
+        <p>Your added items will appear here</p>
+    </div>
+
+<!--Displays cart items -->
+    <ng-template #loadedCart>
+        <div class="loadedCart">
+            <app-cart-item *ngFor="let cartItem of cartItems()" [cartItem]="cartItem"></app-cart-item>
+        </div>
+        <div class="cart-total">
+            <p class="total-text">Order Total</p>
+            <p class="currency">{{total() | currency}}</p>
+        </div>
+        <div class="carbon">
+            <img src="./assets/images/icon-carbon-neutral.svg" alt="carbon icon">
+            <p> This is a <strong>carbon-neutral</strong>  delivery</p>
+        </div>
+        <button class="checkout"> Confirm Order</button>
+    </ng-template>
+</div>

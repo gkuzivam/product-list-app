@@ -1,0 +1,13 @@
+<div class="dessert-item">
+    <div class="dessert-image-container">
+        <img class="dessert-image" [src]="dessert.image.desktop" alt="Dessert image">
+        <button class="image-button" (click)="addToCart(dessert)">
+            <img src="./assets/images/icon-add-to-cart.svg" alt="Add to cart image">
+            <p>Add to Cart</p>
+        </button>
+    </div>
+
+    <p class="category">{{ dessert.category }}</p>
+    <p class="name">{{ dessert.name }}</p>
+    <p class="price">{{ dessert.price | currency }}</p>
+</div>

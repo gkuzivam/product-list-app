@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+}
+
+.dessert-list {
+    flex: 3;
+    margin-left: 40px;
+}
+
+.cart {
+    flex: 1;
+    margin-right: 40px;
+}
