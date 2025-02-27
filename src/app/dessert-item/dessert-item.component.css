@@ -4,8 +4,10 @@
 
 .dessert-image-container {
     position: relative;
-    width: 250px; /* Match the width of the dessert image */
-    height: 240px; /* Match the height of the dessert image */
+    width: 250px;
+    /* Match the width of the dessert image */
+    height: 240px;
+    /* Match the height of the dessert image */
 }
 
 .dessert-image {
@@ -15,13 +17,14 @@
 
 .image-button {
     position: absolute;
-    bottom: -22px; /* Adjust as needed */
+    bottom: -22px;
+    /* Adjust as needed */
     left: 50%;
     transform: translateX(-50%);
     width: 160px;
     height: 44px;
     background-color: white;
-    border-color:  hsl(7, 20%, 60%);
+    border-color: hsl(7, 20%, 60%);
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -42,14 +45,71 @@
 }
 
 .image-button:hover {
-    border-color:hsl(14, 86%, 42%);
+    border-color: hsl(14, 86%, 42%);
 }
 
- .image-button:hover p {
+.image-button:hover p {
     color: hsl(14, 86%, 42%);
- }
+}
 
-.name, .price {
+.quantity-control {
+    position: absolute;
+    bottom: -22px;
+    /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 44px;
+    background-color: hsl(14, 86%, 42%);
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+
+.decrement-button {
+    background: transparent;
+    border: 0.5px solid white;
+    border-radius: 300%;
+}
+
+.decrement-button:hover {
+    background: white;
+}
+
+.decrement-button img {
+    width: 10px;
+    height: 10px;
+}
+
+.decrement-button:hover img {
+    filter: brightness(0) saturate(100%) invert(32%) sepia(100%) saturate(750%) hue-rotate(330deg) brightness(95%) contrast(101%);
+}
+
+.increment-button {
+    background: transparent;
+    border: 0.5px solid white;
+    border-radius: 300%;
+}
+
+.increment-button:hover {
+    background: white;
+}
+
+.increment-button:hover img {
+    filter: brightness(0) saturate(100%) invert(32%) sepia(100%) saturate(750%) hue-rotate(330deg) brightness(95%) contrast(101%);
+}
+
+.increment-button img {
+    width: 10px;
+    height: 10px;
+}
+
+.name,
+.price {
     font-size: 14px;
     margin: 2px;
 }

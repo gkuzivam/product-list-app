@@ -14,7 +14,7 @@
     font-size: 14px;
     margin-top: 0px;
     color: hsl(14, 86%, 42%);
-    font-weight: 600; 
+    font-weight: 600;
     margin-right: 15px;
 }
 
@@ -48,6 +48,10 @@
     padding: 0px;
     margin-left: auto;
     margin-top: -10px;
+}
+
+.remove-button:hover {
+    border: 1px solid black;
 }
 
 .remove-image {

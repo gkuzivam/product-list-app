@@ -1,11 +1,24 @@
 <div class="dessert-item">
     <div class="dessert-image-container">
         <img class="dessert-image" [src]="dessert.image.desktop" alt="Dessert image">
-        <button class="image-button" (click)="addToCart(dessert)">
+        <button class="image-button" (click)="addToCart(dessert)"
+            *ngIf="onFindQuantity(dessert) === 0; else quantityButton">
             <img src="./assets/images/icon-add-to-cart.svg" alt="Add to cart image">
             <p>Add to Cart</p>
         </button>
     </div>
+
+    <ng-template #quantityButton>
+        <div class="quantity-control">
+            <button class="decrement-button" (click)="onDecreaseQuantity(dessert)">
+                <img src="./assets/images/icon-decrement-quantity.svg" alt="Decrease image">
+            </button>
+            <p>{{ onFindQuantity(dessert) }}</p>
+            <button class="increment-button" (click)="onIncreaseQuantity(dessert)">
+                <img src="./assets/images/icon-increment-quantity.svg" alt="Increment image">
+            </button>
+        </div>
+    </ng-template>
 
     <p class="category">{{ dessert.category }}</p>
     <p class="name">{{ dessert.name }}</p>
