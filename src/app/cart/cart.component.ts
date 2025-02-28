@@ -8,10 +8,9 @@ import { CartItemComponent } from '../cart-item/cart-item.component';
   selector: 'app-cart',
   imports: [CommonModule, CommonModule, CartItemComponent],
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css'
+  styleUrl: './cart.component.css',
 })
 export class CartComponent {
-
   cartTitle = 'Your Cart';
 
   private cartService = inject(CartService);
@@ -19,4 +18,14 @@ export class CartComponent {
   cartItems = this.cartService.cartItems;
   cartCount = this.cartService.cartCount;
   total = this.cartService.total;
+  orderConfirmed = false;
+
+  onConfirmOrder(): void {
+    this.orderConfirmed = true;
+  }
+
+  onStartNewOrder(): void {
+    this.cartService.emptyCart();
+    this.orderConfirmed = false;
+  }
 }

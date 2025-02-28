@@ -5,7 +5,7 @@
         <p>Your added items will appear here</p>
     </div>
 
-<!--Displays cart items -->
+    <!--Displays cart items -->
     <ng-template #loadedCart>
         <div class="loadedCart">
             <app-cart-item *ngFor="let cartItem of cartItems()" [cartItem]="cartItem"></app-cart-item>
@@ -16,8 +16,34 @@
         </div>
         <div class="carbon">
             <img src="./assets/images/icon-carbon-neutral.svg" alt="carbon icon">
-            <p> This is a <strong>carbon-neutral</strong>  delivery</p>
+            <p> This is a <strong>carbon-neutral</strong> delivery</p>
         </div>
-        <button class="checkout"> Confirm Order</button>
+        <button class="checkout" (click)="onConfirmOrder()"> Confirm Order</button>
     </ng-template>
+
+    <div class="order-confirmed" *ngIf="orderConfirmed">
+        <div class="summary">
+            <img src="./assets/images/icon-order-confirmed.svg" alt="order confirmed">
+            <h2>Order Confirmed</h2>
+            <p class="message">We hope you enjoy your food!</p>
+            <div class="order-details">
+                <div class="summary-item" *ngFor="let cartItem of cartItems()">
+                    <img class="summary-img" [src]="cartItem.dessert.image.desktop" alt="Dessert image">
+                    <div class="name-details">
+                        <p class="summary-name">{{cartItem.dessert.name}}</p>
+                        <div class="quantity-details">
+                            <p class="summary-quant"> {{cartItem.quantity}}x</p>
+                            <p class="summary-price"> &#64; {{cartItem.dessert.price}}</p>
+                            <p class="exPrice"> {{(cartItem.quantity * cartItem.dessert.price) | currency }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-total">
+                    <p class="summary-total">Order Total</p>
+                    <p class="currency">{{total() | currency}}</p>
+                </div>
+            </div>
+            <button class="checkout" (click)="onStartNewOrder()"> Start New Order</button>
+        </div>
+    </div>
 </div>

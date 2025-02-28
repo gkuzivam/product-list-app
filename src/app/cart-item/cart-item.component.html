@@ -1,9 +1,9 @@
-<div class="cart-item">
+<div class="cart-item" *ngIf="item() as cartItem">
     <p class="name"> {{cartItem.dessert.name}}</p>
     <div class="quantity-container">
         <p class="quantity"> {{cartItem.quantity}}x </p>
         <p class="price"> &#64;{{cartItem.dessert.price | currency}} </p>
-        <p class="unit-total">{{cartItem.dessert.price | currency}}</p>
+        <p class="unit-total">{{exPrice()| currency}}</p>
         <button class="remove-button" (click)="onRemoveItem(cartItem)">
             <img class="remove-image" src="./assets/images/icon-remove-item.svg" alt="remove icon">
         </button>

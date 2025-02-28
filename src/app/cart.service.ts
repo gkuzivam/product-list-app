@@ -56,4 +56,8 @@ export class CartService {
   removeFromCart(cartItem: CartItem): void {
     this.cartItems.update((items) => items.filter((item) => item !== cartItem));
   }
+
+  emptyCart(): void {
+    this.cartItems.update(() => []);
+  }
 }

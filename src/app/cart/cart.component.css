@@ -16,7 +16,8 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center; /* Center the text */
+    text-align: center;
+    /* Center the text */
 }
 
 .empty-cart p {
@@ -74,4 +75,100 @@ h2 {
 
 .checkout:hover {
     background-color: hsl(14, 86%, 32%);
+}
+
+.order-confirmed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(166, 160, 160, 0.53);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.summary {
+    background-color: white;
+    padding: 50px;
+}
+
+.summary img {
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+.summary h2 {
+    color: hsl(14, 65%, 9%);
+    margin-bottom: 0px;
+    font-size: 25px;
+}
+
+.message {
+    color: hsl(12, 20%, 44%);
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.summary-img {
+    width: 48px;
+    height: 48px;
+}
+
+.summary-name {
+    color: hsl(14, 65%, 9%);
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0px 0px 0px 10px;
+}
+
+.name-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-item {
+    display: flex;
+    border-bottom: 1px solid hsl(14, 25%, 72%);
+}
+
+.quantity-details {
+    display: flex;
+}
+
+.summary-quant {
+    margin-left: 10px;
+    color: hsl(14, 86%, 42%);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.summary-price {
+    margin-left: 10px;
+    font-size: 14px;
+    color: hsl(12, 20%, 44%);
+    font-weight: 400;
+}
+
+.exPrice {
+    margin-left: 50px;
+    font-size: 14px;
+    color: hsl(14, 65%, 9%);
+    font-weight: 600;
+
+}
+
+.order-details {
+    background-color: hsl(13, 31%, 94%);
+    padding: 25px 25px 15px 25px;
+}
+
+.summary-total {
+    font-size: 14px;
+    color: hsl(12, 20%, 44%);
+    font-weight: 400;
 }
